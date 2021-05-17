@@ -42,6 +42,10 @@ docker run -it --rm mingrammer/flog
 $ docker build -t repo/image-name:version .
 $ docker push repo/image-name:version
 $ kubectl run flog --image repo/image-name:version
+$ kubectl exec -it pod/flog -- sh
+
+# To send output on the STDOUT of PID 1
+$ flog -f json -n 1 >> /proc/1/fd/1
 ```
 
 ## Usage
