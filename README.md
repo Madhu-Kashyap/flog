@@ -35,6 +35,15 @@ Download gzip file from [Github Releases](https://github.com/mingrammer/flog/rel
 docker run -it --rm mingrammer/flog
 ```
 
+### On K8s
+
+```
+# First build and push the image
+$ docker build -t repo/image-name:version .
+$ docker push repo/image-name:version
+$ kubectl run flog --image repo/image-name:version
+```
+
 ## Usage
 
 There are useful options. (`flog --help`)
