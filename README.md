@@ -85,6 +85,12 @@ $ flog -t log -f apache_combined -o web/log/apache.log -b 10485760 -p 1048576
 
 # Generate logs in rfc3164 format infinitely until killed
 $ flog -f rfc3164 -l
+
+# Generate log in JSON format and send it to STDOUT of PID 1
+$ flog -f json -n 1 >> /proc/1/fd/1
+
+# Generate 5000 logs in JSON format and send it to STDOUT of PID 1 at the rate of 1000 logs/s
+$ flog -f json -n 5000 -d 1ms  >> /proc/1/fd/1
 ```
 
 ## Supported Formats
